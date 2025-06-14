@@ -583,3 +583,7 @@ h6,
   background: black;
   color: var(--bs-primary);
 }
+
+.navbar-brand img{
+  width:150px;
+}

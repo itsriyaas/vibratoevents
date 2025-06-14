@@ -1,0 +1,1277 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>Vibrato Events</title>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <meta content="" name="keywords" />
+    <meta content="" name="description" />
+
+    <!-- Google Web Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600&family=Playball&display=swap"
+      rel="stylesheet"
+    />
+   <!-- 
+    - favicon
+  -->
+  <link rel="shortcut icon" href="/img/32 x 23.png" type="image/svg+xml">
+    <!-- Icon Font Stylesheet -->
+    <link
+      rel="stylesheet"
+      href="https://use.fontawesome.com/releases/v5.15.4/css/all.css"
+    />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css"
+      rel="stylesheet"
+    />
+
+    <!-- Libraries Stylesheet -->
+    <link href="lib/animate/animate.min.css" rel="stylesheet" />
+    <link href="lib/lightbox/css/lightbox.min.css" rel="stylesheet" />
+    <link href="lib/owlcarousel/owl.carousel.min.css" rel="stylesheet" />
+
+    <!-- Customized Bootstrap Stylesheet -->
+    <link href="css/bootstrap.min.css" rel="stylesheet" />
+
+    <!-- Template Stylesheet -->
+    <link href="css/style.css" rel="stylesheet" />
+  </head>
+<style>
+  .nav-linkk {
+    transition: all 0.3s ease;
+  }
+
+  .nav-linkk:hover {
+    background-color: #0d6efd;
+    color: rgb(0, 0, 0) !important;
+    border-color: #ffa600;
+  }
+
+  .nav-linkk.active {
+    background-color: #000000 !important;
+    color: white !important;
+    border-color: #c58300 !important;
+  }
+  h5{
+    color: grey;
+  }
+    .menu-section {
+    background: #fff8f3;
+  }
+  .img{
+    margin-top: 50px;
+    width: 300px;
+  }
+  .img-modal {
+  display: none;
+  position: fixed;
+  z-index: 1050;
+  padding-top: 60px;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgba(0, 0, 0, 0.85);
+}
+
+.img-modal .modal-content {
+  margin: auto;
+  display: block;
+  max-width: 500px;
+  max-height: 80vh;
+  border-radius: 10px;
+}
+
+.img-modal .close {
+  position: absolute;
+  top: 20px;
+  right: 35px;
+  color: #fff;
+  font-size: 40px;
+  font-weight: bold;
+  cursor: pointer;
+}
+</style>
+
+  <body>
+    <!-- Spinner Start -->
+    <div
+      id="spinner"
+      class="show w-100 vh-100 bg-white position-fixed translate-middle top-50 start-50 d-flex align-items-center justify-content-center"
+    >
+      <div class="spinner-grow text-primary" role="status"></div>
+    </div>
+    <!-- Spinner End -->
+
+    <!-- Navbar start -->
+    <div class="container-fluid nav-bar">
+      <div class="container">
+        <nav class="navbar navbar-light navbar-expand-lg py-4">
+          <a href="index.html" class="navbar-brand">
+            <img
+              src="/img/178 x 61_a.png"
+              alt="logo"
+              width="90"
+            />
+          </a>
+          <button
+            class="navbar-toggler py-2 px-3"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#navbarCollapse"
+          >
+            <span class="fa fa-bars text-primary"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarCollapse">
+            <div class="navbar-nav mx-auto">
+              <a href="index.html" class="nav-item nav-link active">Home</a>
+              <a href="/about.html" class="nav-item nav-link">About</a>
+              <a href="service.html" class="nav-item nav-link">Services</a>
+              <a href="event.html" class="nav-item nav-link">Events</a>
+              <a href="menu.html" class="nav-item nav-link">Menu</a>
+              <a href="/contact.html" class="nav-item nav-link">Contact</a>
+            </div>
+             <a
+              href="https://api.whatsapp.com/send?phone=919947447000&text=Enquiry"
+              class="btns btn-primary py-2 px-4 d-none d-xl-inline-block rounded-pill"
+              >Book Now</a
+            >
+          </div>
+        </nav>
+      </div>
+    </div>
+    <!-- Navbar End -->
+
+    <!-- Hero Start -->
+    <div class="container-fluid bg-light py-4 mt-0">
+      <div class="container text-center animated bounceInDown">
+        <h1 class="display-1 mb-4">Menu</h1>
+        <ol
+          class="breadcrumb justify-content-center mb-0 animated bounceInDown"
+        >
+          <li class="breadcrumb-item"><a href="/index.html">Home</a></li>
+          <li class="breadcrumb-item"><a href="#">Pages</a></li>
+          <li class="breadcrumb-item text-dark" aria-current="page">Menu</li>
+        </ol>
+      </div>
+    </div>
+    <!-- Hero End -->
+
+    <!-- Menu Start -->
+    <div class="container-fluid menu bg-light py-4">
+      <div class="container">
+        <div class="text-center wow bounceInUp" data-wow-delay="0.1s">
+          <small
+            class="d-inline-block fw-bold text-dark text-uppercase bg-light border border-primary rounded-pill px-4 py-1 mb-3"
+            >Our Menu</small
+          >
+          <h1 class="display-5 mb-5">Most Popular Food in the World</h1>
+        </div>
+       <div class="tab-class text-center">
+  <ul
+    class="nav nav-pills d-flex flex-wrap justify-content-center gap-3 mb-5 wow bounceInUp"
+    data-wow-delay="0.1s"
+    role="tablist"
+  >
+    <li class="nav-item" role="presentation">
+      <button
+        class="nav-linkk active px-4 py-2 border border-primary bg-white text-primary fw-semibold rounded-pill shadow-sm"
+        id="welcome-tab"
+        data-bs-toggle="pill"
+        data-bs-target="#tab-6"
+        type="button"
+        role="tab"
+        aria-controls="tab-6"
+        aria-selected="true"
+      >
+        Welcome Drinks
+      </button>
+    </li>
+    <li class="nav-item" role="presentation">
+      <button
+        class="nav-linkk px-4 py-2 border border-primary bg-white text-primary fw-semibold rounded-pill shadow-sm"
+        id="maincourse-tab"
+        data-bs-toggle="pill"
+        data-bs-target="#tab-7"
+        type="button"
+        role="tab"
+        aria-controls="tab-7"
+        aria-selected="false"
+      >
+        Main Course
+      </button>
+    </li>
+    <li class="nav-item" role="presentation">
+      <button
+        class="nav-linkk px-4 py-2 border border-primary bg-white text-primary fw-semibold rounded-pill shadow-sm"
+        id="veg-tab"
+        data-bs-toggle="pill"
+        data-bs-target="#tab-8"
+        type="button"
+        role="tab"
+        aria-controls="tab-8"
+        aria-selected="false"
+      >
+        Veg
+      </button>
+    </li>
+    <li class="nav-item" role="presentation">
+      <button
+        class="nav-linkk px-4 py-2 border border-primary bg-white text-primary fw-semibold rounded-pill shadow-sm"
+        id="nonveg-tab"
+        data-bs-toggle="pill"
+        data-bs-target="#tab-9"
+        type="button"
+        role="tab"
+        aria-controls="tab-9"
+        aria-selected="false"
+      >
+        Non-Veg
+      </button>
+    </li>
+    <li class="nav-item" role="presentation">
+      <button
+        class="nav-linkk px-4 py-2 border border-primary bg-white text-primary fw-semibold rounded-pill shadow-sm"
+        id="special-tab"
+        data-bs-toggle="pill"
+        data-bs-target="#tab-10"
+        type="button"
+        role="tab"
+        aria-controls="tab-10"
+        aria-selected="false"
+      >
+        Our Special
+      </button>
+    </li>
+  </ul>
+</div>
+
+         <div class="tab-content">
+              <div class="tab-pane fade show active" id="tab-6" role="tabpanel" aria-labelledby="welcome-tab">
+                <div class="row g-4">
+                  <!-- Loop over drink items -->
+                  <div class="col-lg-6 wow bounceInUp" data-wow-delay="0.1s">
+                    <div class="menu-item d-flex align-items-center">
+                      <img
+                        class="flex-shrink-0 img-fluid rounded-circle"
+                        src="/img/drinks/orange-juice.png"
+                        alt=""
+                        width="60"
+                      />
+                      <div class="w-100 d-flex flex-column text-start ps-4">
+                        <div
+                          class="d-flex justify-content-between border-bottom border-primary pb-2 mb-2"
+                        >
+                          <h4>Orange Juice</h4>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+    
+                  <div class="col-lg-6 wow bounceInUp" data-wow-delay="0.2s">
+                    <div class="menu-item d-flex align-items-center">
+                      <img
+                        class="flex-shrink-0 img-fluid rounded-circle"
+                        src="/img/drinks/pineapple.png"
+                        alt=""
+                        width="60"
+                      />
+                      <div class="w-100 d-flex flex-column text-start ps-4">
+                        <div
+                          class="d-flex justify-content-between border-bottom border-primary pb-2 mb-2"
+                        >
+                          <h4>Pineapple Juice</h4>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+    
+                  <!-- Repeat for remaining drinks -->
+                  <div class="col-lg-6 wow bounceInUp" data-wow-delay="0.3s">
+                    <div class="menu-item d-flex align-items-center">
+                      <img
+                        class="flex-shrink-0 img-fluid rounded-circle"
+                        src="/img/drinks/grape-juice.png"
+                        alt=""
+                        width="60"
+                      />
+                      <div class="w-100 d-flex flex-column text-start ps-4">
+                        <div
+                          class="d-flex justify-content-between border-bottom border-primary pb-2 mb-2"
+                        >
+                          <h4>Grape Juice</h4>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-lg-6 wow bounceInUp" data-wow-delay="0.4s">
+                    <div class="menu-item d-flex align-items-center">
+                      <img
+                        class="flex-shrink-0 img-fluid rounded-circle"
+                        src="/img/drinks/guava.png"
+                        alt=""
+                        width="60"
+                      />
+                      <div class="w-100 d-flex flex-column text-start ps-4">
+                        <div
+                          class="d-flex justify-content-between border-bottom border-primary pb-2 mb-2"
+                        >
+                          <h4>Guava Juice</h4>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-lg-6 wow bounceInUp" data-wow-delay="0.5s">
+                    <div class="menu-item d-flex align-items-center">
+                      <img
+                        class="flex-shrink-0 img-fluid rounded-circle"
+                        src="/img/drinks/watermelon-juice.png"
+                        alt=""
+                        width="60"
+                      />
+                      <div class="w-100 d-flex flex-column text-start ps-4">
+                        <div
+                          class="d-flex justify-content-between border-bottom border-primary pb-2 mb-2"
+                        >
+                          <h4>Watermelon Juice</h4>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-lg-6 wow bounceInUp" data-wow-delay="0.6s">
+                    <div class="menu-item d-flex align-items-center">
+                      <img
+                        class="flex-shrink-0 img-fluid rounded-circle"
+                        src="/img/drinks/drink.png"
+                        alt=""
+                        width="60"
+                      />
+                      <div class="w-100 d-flex flex-column text-start ps-4">
+                        <div
+                          class="d-flex justify-content-between border-bottom border-primary pb-2 mb-2"
+                        >
+                          <h4>Mint Lime</h4>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-lg-6 wow bounceInUp" data-wow-delay="0.7s">
+                    <div class="menu-item d-flex align-items-center">
+                      <img
+                        class="flex-shrink-0 img-fluid rounded-circle"
+                        src="/img/drinks/cocktail.png"
+                        alt=""
+                        width="60"
+                      />
+                      <div class="w-100 d-flex flex-column text-start ps-4">
+                        <div
+                          class="d-flex justify-content-between border-bottom border-primary pb-2 mb-2"
+                        >
+                          <h4>Magic Lime</h4>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-lg-6 wow bounceInUp" data-wow-delay="0.8s">
+                    <div class="menu-item d-flex align-items-center">
+                      <img
+                        class="flex-shrink-0 img-fluid rounded-circle"
+                        src="/img/drinks/raspberry-mojito.png"
+                        alt=""
+                        width="60"
+                      />
+                      <div class="w-100 d-flex flex-column text-start ps-4">
+                        <div
+                          class="d-flex justify-content-between border-bottom border-primary pb-2 mb-2"
+                        >
+                          <h4>Mojito</h4>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+    
+              <div class="tab-pane fade" id="tab-7" role="tabpanel" aria-labelledby="maincourse-tab">
+  <div class="row g-4">
+    <!-- Biryani Menu -->
+    <div class="col-12">
+      <h4 class="text-primary border-bottom pb-2 mb-3">Biryani Menu</h4>
+    </div>
+
+    <div class="col-lg-6">
+      <div class="menu-item d-flex">
+        <div class="w-100 d-flex flex-column text-start">
+          <h5>Veg Biryani</h5>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-lg-6">
+      <div class="menu-item d-flex">
+        <div class="w-100 d-flex flex-column text-start">
+          <h5>Mutton Biryani</h5>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-lg-6">
+      <div class="menu-item d-flex">
+        <div class="w-100 d-flex flex-column text-start">
+          <h5>Mutton Dum Biryani</h5>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-lg-6">
+      <div class="menu-item d-flex">
+        <div class="w-100 d-flex flex-column text-start">
+          <h5>Chicken Biryani</h5>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-lg-6">
+      <div class="menu-item d-flex">
+        <div class="w-100 d-flex flex-column text-start">
+          <h5>Chicken Dum Biryani</h5>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-lg-6">
+      <div class="menu-item d-flex">
+        <div class="w-100 d-flex flex-column text-start">
+          <h5>Chicken Tikka Biryani</h5>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-lg-6">
+      <div class="menu-item d-flex">
+        <div class="w-100 d-flex flex-column text-start">
+          <h5>Hyderabadi Biryani</h5>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-lg-6">
+      <div class="menu-item d-flex">
+        <div class="w-100 d-flex flex-column text-start">
+          <h5>Beef Biryani</h5>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-lg-6">
+      <div class="menu-item d-flex">
+        <div class="w-100 d-flex flex-column text-start">
+          <h5>Fish Biryani</h5>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-lg-6">
+      <div class="menu-item d-flex">
+        <div class="w-100 d-flex flex-column text-start">
+          <h5>Prawns Biryani</h5>
+        </div>
+      </div>
+    </div>
+
+    <!-- Arabian Food -->
+    <div class="col-12 mt-4">
+      <h4 class="text-primary border-bottom pb-2 mb-3">Arabian Food</h4>
+    </div>
+
+    <div class="col-lg-6">
+      <div class="menu-item d-flex">
+        <div class="w-100 d-flex flex-column text-start">
+          <h5>Mutton Mandhi Rice</h5>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-lg-6">
+      <div class="menu-item d-flex">
+        <div class="w-100 d-flex flex-column text-start">
+          <h5>Khapsa</h5>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-lg-6">
+      <div class="menu-item d-flex">
+        <div class="w-100 d-flex flex-column text-start">
+          <h5>Majboos</h5>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-lg-6">
+      <div class="menu-item d-flex">
+        <div class="w-100 d-flex flex-column text-start">
+          <h5>Buhari Rice</h5>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-lg-6">
+      <div class="menu-item d-flex">
+        <div class="w-100 d-flex flex-column text-start">
+          <h5>Lemon Leg Mutton</h5>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+    <div class="tab-pane fade" id="tab-8" role="tabpanel" aria-labelledby="veg-tab">
+      <div class="row g-4">
+        <!-- Column 1 -->
+        <div class="col-lg-6">
+          <div class="menu-item d-flex align-items-center">
+            <div class="w-100 d-flex flex-column text-start ps-4">
+              <div class="d-flex justify-content-between border-bottom border-primary pb-2 mb-2">
+                <h4 class="text-primary border-bottom pb-2 mb-3">Paneer Dishes</h4>
+              </div>
+              <h5 class="mb-0">
+                • Paneer Tikka<br>
+                • Chilli Paneer<br>
+                • Paneer Butter Masala<br>
+                • Panner Tikka Masala<br>
+                • Paneer Kadai<br>
+                • Paneer Burji<br>
+                • Palak Paneer
+              </h5>
+            </div>
+          </div>
+        </div>
+    
+        <!-- Column 2 -->
+        <div class="col-lg-6">
+          <div class="menu-item d-flex align-items-center">
+            <div class="w-100 d-flex flex-column text-start ps-4">
+              <div class="d-flex justify-content-between border-bottom border-primary pb-2 mb-2">
+                <h4 class="text-primary border-bottom pb-2 mb-3">Chilli & Mushroom Dishes</h4>
+              </div>
+              <h5 class="mb-0">
+                • Chilli Mushroom<br>
+                • Chilli Gobi Fry<br>
+                • Chilli Gobi<br>
+                • Gobi Manchurian<br>
+                • Mushroom Masala
+              </h5>
+            </div>
+          </div>
+        </div>
+    
+        <!-- Column 3 -->
+        <div class="col-lg-6">
+          <div class="menu-item d-flex align-items-center">
+            <div class="w-100 d-flex flex-column text-start ps-4">
+              <div class="d-flex justify-content-between border-bottom border-primary pb-2 mb-2">
+                <h4 class="text-primary border-bottom pb-2 mb-3">Dal & Kurma</h4>
+              </div>
+              <h5 class="mb-0">
+                • Chana Masala<br>
+                • Dal Makhani<br>
+                • Dal Fry<br>
+                • Dal Tadka<br>
+                • Veg Kurma<br>
+                • Veg Navrathan Kurma
+              </h5>
+            </div>
+          </div>
+        </div>
+    
+        <!-- Column 4 -->
+        <div class="col-lg-6">
+          <div class="menu-item d-flex align-items-center">
+            <div class="w-100 d-flex flex-column text-start ps-4">
+              <div class="d-flex justify-content-between border-bottom border-primary pb-2 mb-2">
+                <h4 class="text-primary border-bottom pb-2 mb-3">Veg Varieties</h4>
+              </div>
+              <h5 class="mb-0">
+                • Veg Kadai<br>
+                • Rajma<br>
+                • Mix Veg Masala<br>
+                • Veg Chettinadu<br>
+                • Aloo Gobi<br>
+                • Aloo Mutter
+              </h5>
+            </div>
+          </div>
+        </div>
+    
+        <!-- Column 5 -->
+        <div class="col-lg-6">
+          <div class="menu-item d-flex align-items-center">
+            <div class="w-100 d-flex flex-column text-start ps-4">
+              <div class="d-flex justify-content-between border-bottom border-primary pb-2 mb-2">
+                <h4 class="text-primary border-bottom pb-2 mb-3">Other Specials</h4>
+              </div>
+              <h5 class="mb-0">
+                • Baby Corn Chilli<br>
+                • Green Peas Masala<br>
+                • Malai Kofta<br>
+                • Ves Stew
+              </h5>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+              <div class="tab-pane fade" id="tab-9" role="tabpanel" aria-labelledby="nonveg-tab">
+  <div class="row g-4">
+    <div class="col-12">
+      <h4 class="text-primary border-bottom pb-2 mb-3">Chicken Menu</h4>
+    </div>
+
+    <!-- Chicken Items from the Uploaded Menu -->
+    <div class="col-lg-6">
+      <div class="menu-item d-flex">
+        <div class="w-100 d-flex flex-column text-start">
+          <h5>Chicken Fry</h5>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-lg-6">
+      <div class="menu-item d-flex">
+        <div class="w-100 d-flex flex-column text-start">
+          <h5>Chicken 65</h5>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-lg-6">
+      <div class="menu-item d-flex">
+        <div class="w-100 d-flex flex-column text-start">
+          <h5>Chicken Kondattam</h5>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-lg-6">
+      <div class="menu-item d-flex">
+        <div class="w-100 d-flex flex-column text-start">
+          <h5>Alfaham Chicken</h5>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-lg-6">
+      <div class="menu-item d-flex">
+        <div class="w-100 d-flex flex-column text-start">
+          <h5>Grilled Chicken</h5>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-lg-6">
+      <div class="menu-item d-flex">
+        <div class="w-100 d-flex flex-column text-start">
+          <h5>Royal Fried Chicken</h5>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-lg-6">
+      <div class="menu-item d-flex">
+        <div class="w-100 d-flex flex-column text-start">
+          <h5>Broast Chicken</h5>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-lg-6">
+      <div class="menu-item d-flex">
+        <div class="w-100 d-flex flex-column text-start">
+          <h5>Dragan Chicken</h5>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-lg-6">
+      <div class="menu-item d-flex">
+        <div class="w-100 d-flex flex-column text-start">
+          <h5>Chicken Karakkudi</h5>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-lg-6">
+      <div class="menu-item d-flex">
+        <div class="w-100 d-flex flex-column text-start">
+          <h5>Spring Chicken</h5>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-lg-6">
+      <div class="menu-item d-flex">
+        <div class="w-100 d-flex flex-column text-start">
+          <h5>Chicken Tikka</h5>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-lg-6">
+      <div class="menu-item d-flex">
+        <div class="w-100 d-flex flex-column text-start">
+          <h5>Chicken Kabab</h5>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-lg-6">
+      <div class="menu-item d-flex">
+        <div class="w-100 d-flex flex-column text-start">
+          <h5>Hangidi Kabab</h5>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-lg-6">
+      <div class="menu-item d-flex">
+        <div class="w-100 d-flex flex-column text-start">
+          <h5>Hariyali Kabab</h5>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-lg-6">
+      <div class="menu-item d-flex">
+        <div class="w-100 d-flex flex-column text-start">
+          <h5>Reshmi Kabab</h5>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-lg-6">
+      <div class="menu-item d-flex">
+        <div class="w-100 d-flex flex-column text-start">
+          <h5>Chilli Chicken</h5>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-lg-6">
+      <div class="menu-item d-flex">
+        <div class="w-100 d-flex flex-column text-start">
+          <h5>Chicken Rost</h5>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-lg-6">
+      <div class="menu-item d-flex">
+        <div class="w-100 d-flex flex-column text-start">
+          <h5>Chicken Manchurian</h5>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-lg-6">
+      <div class="menu-item d-flex">
+        <div class="w-100 d-flex flex-column text-start">
+          <h5>Kadai Chicken</h5>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-lg-6">
+      <div class="menu-item d-flex">
+        <div class="w-100 d-flex flex-column text-start">
+          <h5>Chicken Chettinadu</h5>
+        </div>
+      </div>
+    </div>
+
+    <!-- More chicken items from second column -->
+
+    <div class="col-lg-6"><div class="menu-item d-flex"><div class="w-100 d-flex flex-column text-start"><h5>Paper Chicken (Curry/Fry)</h5></div></div></div>
+    <div class="col-lg-6"><div class="menu-item d-flex"><div class="w-100 d-flex flex-column text-start"><h5>Ginger Chicken</h5></div></div></div>
+    <div class="col-lg-6"><div class="menu-item d-flex"><div class="w-100 d-flex flex-column text-start"><h5>Garlic Chicken</h5></div></div></div>
+    <div class="col-lg-6"><div class="menu-item d-flex"><div class="w-100 d-flex flex-column text-start"><h5>Butter Chicken</h5></div></div></div>
+    <div class="col-lg-6"><div class="menu-item d-flex"><div class="w-100 d-flex flex-column text-start"><h5>Chicken Tikka Masala</h5></div></div></div>
+    <div class="col-lg-6"><div class="menu-item d-flex"><div class="w-100 d-flex flex-column text-start"><h5>Chicken Dry Fry Masala</h5></div></div></div>
+    <div class="col-lg-6"><div class="menu-item d-flex"><div class="w-100 d-flex flex-column text-start"><h5>Chicken Shahi Kurma</h5></div></div></div>
+    <div class="col-lg-6"><div class="menu-item d-flex"><div class="w-100 d-flex flex-column text-start"><h5>Chicken Shajahani</h5></div></div></div>
+    <div class="col-lg-6"><div class="menu-item d-flex"><div class="w-100 d-flex flex-column text-start"><h5>Chicken Mugulai</h5></div></div></div>
+    <div class="col-lg-6"><div class="menu-item d-flex"><div class="w-100 d-flex flex-column text-start"><h5>Chicken Chatpat</h5></div></div></div>
+    <div class="col-lg-6"><div class="menu-item d-flex"><div class="w-100 d-flex flex-column text-start"><h5>Chicken Makhani</h5></div></div></div>
+    <div class="col-lg-6"><div class="menu-item d-flex"><div class="w-100 d-flex flex-column text-start"><h5>Shezewan Chicken</h5></div></div></div>
+    <div class="col-lg-6"><div class="menu-item d-flex"><div class="w-100 d-flex flex-column text-start"><h5>Chicken Mulakittathu</h5></div></div></div>
+    <div class="col-lg-6"><div class="menu-item d-flex"><div class="w-100 d-flex flex-column text-start"><h5>Chicken Nadan</h5></div></div></div>
+    <div class="col-lg-6"><div class="menu-item d-flex"><div class="w-100 d-flex flex-column text-start"><h5>Chicken Kumbalanga Curry</h5></div></div></div>
+    <div class="col-lg-6"><div class="menu-item d-flex"><div class="w-100 d-flex flex-column text-start"><h5>Chicken Malabari</h5></div></div></div>
+    <div class="col-lg-6"><div class="menu-item d-flex"><div class="w-100 d-flex flex-column text-start"><h5>Chicken Stew</h5></div></div></div>
+  </div>
+</div>
+
+    
+    
+              <div class="tab-pane fade" id="tab-10" role="tabpanel" aria-labelledby="special-tab">
+                <div class="row g-4">
+                  <!-- Dosa Counter -->
+                  <div class="col-lg-6">
+                    <div class="menu-item d-flex align-items-center">
+                      <img
+                        class="flex-shrink-0 img-fluid rounded-circle"
+                        src="/img/specials/dosa.jpg"
+                        alt="" width="60"
+                      />
+                      <div class="w-100 d-flex flex-column text-start ps-4">
+                        <div
+                          class="d-flex justify-content-between border-bottom border-primary pb-2 mb-2"
+                        >
+                          <h4>Dosa Counter</h4>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+    
+                  <!-- Kuttanadan Counter -->
+                  <div class="col-lg-6">
+                    <div class="menu-item d-flex align-items-center">
+                      <img
+                        class="flex-shrink-0 img-fluid rounded-circle"
+                        src="/img/specials/kuttanad.jpg"  width="60"
+                        alt=""
+                      />
+                      <div class="w-100 d-flex flex-column text-start ps-4">
+                        <div
+                          class="d-flex justify-content-between border-bottom border-primary pb-2 mb-2"
+                        >
+                          <h4>Kuttanadan Counter</h4>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+    
+                  <!-- Tea Counter -->
+                  <div class="col-lg-6">
+                    <div class="menu-item d-flex align-items-center">
+                      <img
+                        class="flex-shrink-0 img-fluid rounded-circle"
+                        src="/img/specials/tea.jpg"  width="60"
+                        alt=""
+                      />
+                      <div class="w-100 d-flex flex-column text-start ps-4">
+                        <div
+                          class="d-flex justify-content-between border-bottom border-primary pb-2 mb-2"
+                        >
+                          <h4>Tea Counter</h4>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+    
+                  <!-- Salad Counter -->
+                  <div class="col-lg-6">
+                    <div class="menu-item d-flex align-items-center">
+                      <img
+                        class="flex-shrink-0 img-fluid rounded-circle"
+                        src="/img/specials/salad.jpeg"  width="60"
+                        alt=""
+                      />
+                      <div class="w-100 d-flex flex-column text-start ps-4">
+                        <div
+                          class="d-flex justify-content-between border-bottom border-primary pb-2 mb-2"
+                        >
+                          <h4>Salad Counter</h4>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+    
+                  <!-- Chat Counter -->
+                  <div class="col-lg-6">
+                    <div class="menu-item d-flex align-items-center">
+                      <img
+                        class="flex-shrink-0 img-fluid rounded-circle"
+                        src="/img/specials/chat.jpg"  width="60"
+                        alt=""
+                      />
+                      <div class="w-100 d-flex flex-column text-start ps-4">
+                        <div
+                          class="d-flex justify-content-between border-bottom border-primary pb-2 mb-2"
+                        >
+                          <h4>Chat Counter</h4>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+    
+                  <!-- Chinese Counter -->
+                  <div class="col-lg-6">
+                    <div class="menu-item d-flex align-items-center">
+                      <img
+                        class="flex-shrink-0 img-fluid rounded-circle"
+                        src="/img/specials/chinese.jpeg"  width="60"
+                        alt=""
+                      />
+                      <div class="w-100 d-flex flex-column text-start ps-4">
+                        <div
+                          class="d-flex justify-content-between border-bottom border-primary pb-2 mb-2"
+                        >
+                          <h4>Chinese Counter</h4>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+    
+                  <!-- Arabian Counter -->
+                  <div class="col-lg-6">
+                    <div class="menu-item d-flex align-items-center">
+                      <img
+                        class="flex-shrink-0 img-fluid rounded-circle"
+                        src="/img/specials/arabian.webp"  width="60"
+                        alt=""
+                      />
+                      <div class="w-100 d-flex flex-column text-start ps-4">
+                        <div
+                          class="d-flex justify-content-between border-bottom border-primary pb-2 mb-2"
+                        >
+                          <h4>Arabian Counter</h4>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+    
+                  <!-- Nadan Thattukada -->
+                  <div class="col-lg-6">
+                    <div class="menu-item d-flex align-items-center">
+                      <img
+                        class="flex-shrink-0 img-fluid rounded-circle"
+                        src="/img/specials/thattukada.jpeg"  width="60"
+                        alt=""
+                      />
+                      <div class="w-100 d-flex flex-column text-start ps-4">
+                        <div
+                          class="d-flex justify-content-between border-bottom border-primary pb-2 mb-2"
+                        >
+                          <h4>Nadan Thattukada</h4>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+    
+                  <!-- Crab Counter -->
+                  <div class="col-lg-6">
+                    <div class="menu-item d-flex align-items-center">
+                      <img
+                        class="flex-shrink-0 img-fluid rounded-circle"
+                        src="/img/specials/crab food.jpg"  width="60"
+                        alt=""
+                      />
+                      <div class="w-100 d-flex flex-column text-start ps-4">
+                        <div
+                          class="d-flex justify-content-between border-bottom border-primary pb-2 mb-2"
+                        >
+                          <h4>Crab Counter</h4>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+    
+                  <!-- Shawarma Counter -->
+                  <div class="col-lg-6">
+                    <div class="menu-item d-flex align-items-center">
+                      <img
+                        class="flex-shrink-0 img-fluid rounded-circle"
+                        src="/img/specials/shawaarma.avif"  width="60"
+                        alt=""
+                      />
+                      <div class="w-100 d-flex flex-column text-start ps-4">
+                        <div
+                          class="d-flex justify-content-between border-bottom border-primary pb-2 mb-2"
+                        >
+                          <h4>Shawarma Counter</h4>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+    
+                  <!-- Kadal Theeram -->
+                  <div class="col-lg-6">
+                    <div class="menu-item d-flex align-items-center">
+                      <img
+                        class="flex-shrink-0 img-fluid rounded-circle"
+                        src="/img/specials/kadaltheram.avif" width="60"
+                        alt=""
+                      />
+                      <div class="w-100 d-flex flex-column text-start ps-4">
+                        <div
+                          class="d-flex justify-content-between border-bottom border-primary pb-2 mb-2"
+                        >
+                          <h4>Kadal Theeram</h4>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+    
+                  <!-- Mutton Stuffing -->
+                  <div class="col-lg-6">
+                    <div class="menu-item d-flex align-items-center">
+                      <img
+                        class="flex-shrink-0 img-fluid rounded-circle"
+                        src="/img/specials/mutton stuff.jpg" width="60"
+                        alt=""
+                      />
+                      <div class="w-100 d-flex flex-column text-start ps-4">
+                        <div
+                          class="d-flex justify-content-between border-bottom border-primary pb-2 mb-2"
+                        >
+                          <h4>Mutton Stuffing</h4>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+    
+                  <!-- Fish Stuffing -->
+                  <div class="col-lg-6">
+                    <div class="menu-item d-flex align-items-center">
+                      <img
+                        class="flex-shrink-0 img-fluid rounded-circle"
+                        src="/img/specials/fish stuffing.jpg" width="60"
+                        alt=""
+                      />
+                      <div class="w-100 d-flex flex-column text-start ps-4">
+                        <div
+                          class="d-flex justify-content-between border-bottom border-primary pb-2 mb-2"
+                        >
+                          <h4>Fish Stuffing</h4>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+    
+                  <!-- Puttu Counter -->
+                  <div class="col-lg-6">
+                    <div class="menu-item d-flex align-items-center">
+                      <img
+                        class="flex-shrink-0 img-fluid rounded-circle"
+                        src="/img/specials/puttu.webp" width="60"
+                        alt=""
+                      />
+                      <div class="w-100 d-flex flex-column text-start ps-4">
+                        <div
+                          class="d-flex justify-content-between border-bottom border-primary pb-2 mb-2"
+                        >
+                          <h4>Puttu Counter</h4>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+         </div>
+         <!-- Custom -->
+          <!-- Christian Wedding Menu Section Start -->
+<!-- <section class="menu-section py-5 bg-light">
+  <div class="container">
+    <div class="text-center mb-4">
+      <h2 class="text-danger display-5">Customized Wedding Menu</h2>
+      <p class="lead text-muted">Explore our specially curated wedding menu</p>
+    </div>
+    <div class="row justify-content-center ms-md-5">
+      <div class="col-md-4 mb-4" onclick="openModal(this)">
+        <img src="/img/menu/christain1.jpg" alt="Christian Wedding Menu" class="img img-fluid rounded shadow">
+      </div>
+      <div class="col-md-4 mb-4" onclick="openModal(this)">
+        <img src="/img/menu/c2.jpg" alt="Christian Wedding Menu" class="img img-fluid rounded shadow">
+      </div>
+      <div class="col-md-4 mb-4" onclick="openModal(this)">
+        <img src="/img/menu/c3.jpg" alt="Christian Wedding Menu" class="img img-fluid rounded shadow">
+      </div>
+      <div class="col-md-4 mb-4" onclick="openModal(this)">
+        <img src="/img/menu/c4.jpg" alt="Christian Wedding Menu" class="img img-fluid rounded shadow">
+      </div>
+      <div class="col-md-4 mb-4" onclick="openModal(this)">
+        <img src="/img/menu/c5.jpg" alt="Christian Wedding Menu" class="img img-fluid rounded shadow">
+      </div>
+      <div class="col-md-4 mb-4" onclick="openModal(this)">
+        <img src="/img/menu/c6.jpg" alt="Christian Wedding Menu" class="img img-fluid rounded shadow">
+      </div>
+    </div>
+  </div>
+</section> -->
+
+<!-- Modal for Full Image View -->
+<div id="imgModal" class="img-modal" onclick="closeModal()">
+  <span class="close">&times;</span>
+  <img class="modal-content" id="modalImg">
+</div>
+<!-- Christian Wedding Menu Section End -->
+    <!-- Menu End -->
+
+    <!-- Book Us Start -->
+        <div class="container-fluid contact py-6 wow bounceInUp" data-wow-delay="0.1s">
+            <div class="container">
+                <div class="row g-0">
+                    <div class="col-1">
+                        <img src="img/background-site.jpg" class="img-fluid h-100 w-100 rounded-start" style="object-fit: cover; opacity: 0.7;" alt="">
+                    </div>
+                    <div class="col-10">
+                        <div class="border-bottom border-top border-primary bg-light py-5 px-4">
+                            <div class="text-center">
+                                <small class="d-inline-block fw-bold text-dark text-uppercase bg-light border border-primary rounded-pill px-4 py-1 mb-3">Book Us</small>
+                                <h1 class="display-5 mb-5">Customised Event Booking</h1>
+                            </div>
+                            <div class="row g-4 form">
+                                <div class="col-12 text-center">
+                                    <a href="/customisedevent.html"><button type="submit" class="btns btn-primary px-5 py-3 rounded-pill">BOOK NOW</button></a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-1">
+                        <img src="img/background-site.jpg" class="img-fluid h-100 w-100 rounded-end" style="object-fit: cover; opacity: 0.7;" alt="">
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Book Us End -->
+     <!-- Footer Start -->
+    <div
+      class="container-fluid footer py-4 mb-0 bg-light wow bounceInUp"
+      data-wow-delay="0.1s"
+    >
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-3 col-md-6">
+            <div class="footer-item">
+              <img
+                src="/img/178 x 61_a.png"
+                alt="logo"
+                width="90"
+              />
+              <p class="lh-lg mb-4">
+                Vibrato Events brings you exceptional culinary experiences
+                for every occasion.
+              </p>
+              <div class="footer-icon d-flex">
+                <a
+                  class="btn btn-primary btn-sm-square me-2 rounded-circle"
+                  href="https://www.facebook.com/p/Vibrato-Events-100075687623543/"
+                  ><i class="fab fa-facebook-f"></i
+                ></a>
+                <a
+                  class="btn btn-primary btn-sm-square me-2 rounded-circle"
+                  href=""
+                  ><i class="fab fa-twitter"></i
+                ></a>
+                <a
+                  href="https://www.instagram.com/Vibrato_Events_/"
+                  class="btn btn-primary btn-sm-square me-2 rounded-circle"
+                  ><i class="fab fa-instagram"></i
+                ></a>
+                <a href="#" class="btn btn-primary btn-sm-square rounded-circle"
+                  ><i class="fab fa-linkedin-in"></i
+                ></a>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-3 col-md-6">
+            <div class="footer-item">
+              <h4 class="mb-4">Our Services</h4>
+              <div class="d-flex flex-column align-items-start">
+                <a class="text-body mb-3" href="/catering.html"
+                  ><i class="fa fa-arrow-right text-primary me-2"></i>Wedding
+                  Events</a
+                >
+                <a class="text-body mb-3" href="/stagedecoration.html"
+                  ><i class="fa fa-arrow-right text-primary me-2"></i
+                  >Stage Decoration</a
+                >
+                <a class="text-body mb-3" href="/eventmanagement.html"
+                  ><i class="fa fa-arrow-right text-primary me-2"></i>Business Events</a
+                >
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-3 col-md-6">
+            <div class="footer-item">
+              <h4 class="mb-4">Contact Us</h4>
+              <div class="d-flex flex-column align-items-start">
+                <p>
+                  <i class="fa fa-map-marker-alt text-primary me-2"></i>1st floor, Puthussery Galleria, Engineering college P.O, Viyyur, Pandikkavu, Cheroor, Thrissur, Kerala 680009
+                </p>
+                <a href="tel:+919947447000">
+                  <p>
+                    <i class="fa fa-phone-alt text-primary me-2"></i> +91 994 744 7000
+                  </p>
+                </a>
+               <a href="tel:+919061386000"><p class="ms-4">+91 906 138 6000</p></a>
+                <p>
+                  <i class="fas fa-envelope text-primary me-2"></i>
+                  info@vibratoevents.in
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- Footer End -->
+
+    <!-- Copyright Start -->
+    <div class="container-fluid copyright bg-light py-4">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-6 text-center text-md-start mb-3 mb-md-0">
+            <span class="text-dark"
+              ><a href="#">© VibratoEvents</a>, All right reserved.</span
+            >
+          </div>
+          <div class="col-md-6 my-auto text-center text-md-end text-dark">
+            Designed By
+            <a class="border-bottom" href="https://theaitsolutions.net"
+              >Thea IT Solutions</a
+            >
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- Copyright End -->
+
+    <!-- Back to Top -->
+    <a href="#" class="btn btn-md-square btn-primary rounded-circle back-to-top"
+      ><i class="fa fa-arrow-up"></i
+    ></a>
+
+    <!-- JavaScript Libraries -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="lib/wow/wow.min.js"></script>
+    <script src="lib/easing/easing.min.js"></script>
+    <script src="lib/waypoints/waypoints.min.js"></script>
+    <script src="lib/counterup/counterup.min.js"></script>
+    <script src="lib/lightbox/js/lightbox.min.js"></script>
+    <script src="lib/owlcarousel/owl.carousel.min.js"></script>
+    <script>
+      function openModal(imgContainer) {
+  const modal = document.getElementById("imgModal");
+  const modalImg = document.getElementById("modalImg");
+  const img = imgContainer.querySelector("img");
+  modal.style.display = "block";
+  modalImg.src = img.src;
+}
+
+function closeModal() {
+  document.getElementById("imgModal").style.display = "none";
+}
+    </script>
+
+    <!-- Template Javascript -->
+    <script src="js/main.js"></script>
+  </body>
+</html>

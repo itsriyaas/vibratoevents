@@ -1,0 +1,409 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>Vibrato Event Management</title>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <meta content="" name="keywords" />
+    <meta content="" name="description" />
+
+    <!-- Google Web Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600&family=Playball&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- Icon Font Stylesheet -->
+    <link
+      rel="stylesheet"
+      href="https://use.fontawesome.com/releases/v5.15.4/css/all.css"
+    />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css"
+      rel="stylesheet"
+    />
+
+    <!-- Libraries Stylesheet -->
+    <link href="lib/animate/animate.min.css" rel="stylesheet" />
+    <link href="lib/lightbox/css/lightbox.min.css" rel="stylesheet" />
+    <link href="lib/owlcarousel/owl.carousel.min.css" rel="stylesheet" />
+
+    <!-- Customized Bootstrap Stylesheet -->
+    <link href="css/bootstrap.min.css" rel="stylesheet" />
+    <!-- 
+    - favicon
+  -->
+    <link
+      rel="shortcut icon"
+      href="/img/Vibrato logo.svg"
+      type="image/svg+xml"
+    />
+    <!-- Template Stylesheet -->
+    <link href="css/style.css" rel="stylesheet" />
+  </head>
+  <style>
+    img {
+      display: block;
+      max-width: 60%;
+    }
+
+    .stack {
+      margin-bottom: 100px;
+      width: 55%;
+      max-width: 300px;
+      transition: 0.25s ease;
+      &:hover {
+        transform: rotate(5deg);
+        .card:before {
+          transform: translatey(-2%) rotate(-4deg);
+        }
+        .card:after {
+          transform: translatey(2%) rotate(4deg);
+        }
+      }
+    }
+
+    .card {
+      aspect-ratio: 3 / 2;
+      border: 4px solid;
+      background-color: #fff;
+      position: relative;
+      transition: 0.15s ease;
+      cursor: pointer;
+      padding: 5% 5% 15% 5%;
+      &:before,
+      &:after {
+        content: "";
+        display: block;
+        position: absolute;
+        height: 100%;
+        width: 100%;
+        border: 4px solid;
+        background-color: #fff;
+        transform-origin: center center;
+        z-index: -1;
+        transition: 0.15s ease;
+        top: 0;
+        left: 0;
+      }
+
+      &:before {
+        transform: translatey(-2%) rotate(-6deg);
+      }
+
+      &:after {
+        transform: translatey(2%) rotate(6deg);
+      }
+    }
+    .image {
+      width: 100%;
+      border: 4px solid;
+      aspect-ratio: 1 / 1;
+      position: relative;
+    }
+    #img1{
+      background-image: url(/img/stageImg.jpg);
+      background-size: cover;
+    }
+    #img2{
+      background-image: url(/img/catering/catering1.jpg);
+      background-size: cover;
+    }
+    #img3{
+      background-image: url(/img/events/event3.jpg);
+      background-size: cover;
+    }
+
+    .browser-warning {
+      margin-bottom: 4rem;
+    }
+
+    @supports (aspect-ratio: 1 / 1) {
+      .browser-warning {
+        display: none;
+      }
+    }
+    .txt{
+      font-size: 20px;
+      padding-top: 20px;
+      font-weight: bold;
+      color: black;
+    }
+    .content {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap:5rem;
+    }
+  </style>
+  <body>
+    <!-- Spinner Start -->
+    <div
+      id="spinner"
+      class="show w-100 vh-100 bg-white position-fixed translate-middle top-50 start-50 d-flex align-items-center justify-content-center"
+    >
+      <div class="spinner-grow text-primary" role="status"></div>
+    </div>
+    <!-- Spinner End -->
+
+    <!-- Navbar start -->
+    <div class="container-fluid nav-bar">
+      <div class="container">
+        <nav class="navbar navbar-light navbar-expand-lg py-4">
+          <a href="index.html" class="navbar-brand">
+            <img
+              src="/img/178 x 61_a.png"
+              alt="logo"
+              width="90"
+            />
+          </a>
+          <button
+            class="navbar-toggler py-2 px-3"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#navbarCollapse"
+          >
+            <span class="fa fa-bars text-primary"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarCollapse">
+            <div class="navbar-nav mx-auto">
+              <a href="index.html" class="nav-item nav-link active">Home</a>
+              <a href="/about.html" class="nav-item nav-link">About</a>
+              <a href="service.html" class="nav-item nav-link">Services</a>
+              <a href="event.html" class="nav-item nav-link">Events</a>
+              <a href="menu.html" class="nav-item nav-link">Menu</a>
+              <a href="/contact.html" class="nav-item nav-link">Contact</a>
+            </div>
+            <a
+              href="https://api.whatsapp.com/send?phone=919947447000&text=Enquiry"
+              class="btns btn-primary py-2 px-4 d-none d-xl-inline-block rounded-pill"
+              >Book Now</a
+            >
+          </div>
+        </nav>
+      </div>
+    </div>
+    <!-- Navbar End -->
+
+    <!-- Hero Start -->
+    <div class="container-fluid bg-light py-4 mt-0">
+      <div class="container text-center animated bounceInDown">
+        <h1 class="display-1 mb-4">Events</h1>
+        <ol
+          class="breadcrumb justify-content-center mb-0 animated bounceInDown"
+        >
+          <li class="breadcrumb-item"><a href="#">Home</a></li>
+          <li class="breadcrumb-item"><a href="#">Pages</a></li>
+          <li class="breadcrumb-item text-dark" aria-current="page">Events</li>
+        </ol>
+      </div>
+    </div>
+    <!-- Hero End -->
+
+    <!-- Events Start -->
+   <div class="container-fluid event py-4" id="events">
+      <div class="container">
+        <div class="text-center wow bounceInUp" data-wow-delay="0.1s">
+          <small
+            class="d-inline-block fw-bold text-dark text-uppercase bg-light border border-primary rounded-pill px-4 py-1 mb-3"
+            >Latest Events</small
+          >
+          <h1 class="display-5 mb-5">
+            Our Social & Professional Events Gallery
+          </h1>
+        </div>
+
+      <div class="content">
+        <div class="stack">
+          <p class="browser-warning">
+            If this looks wonky to you it's because this browser doesn't support
+            the CSS property 'aspect-ratio'.
+          </p>
+          <div class="card">
+            <a href="/stagedecoration.html"><div class="image" id="img1"></div></a>
+            <div class="txt text-center"><p>Stage Decoration</p></div>
+          </div>
+        </div>
+
+        <div class="stack">
+          <p class="browser-warning">
+            If this looks wonky to you it's because this browser doesn't support
+            the CSS property 'aspect-ratio'.
+          </p>
+          <div class="card">
+            <a href="/catering.html"><div class="image" id="img2"></div></a>
+            <div class="txt text-center"><p>Wedding Events</p></div>
+          </div>
+        </div>
+
+        <div class="stack">
+          <p class="browser-warning">
+            If this looks wonky to you it's because this browser doesn't support
+            the CSS property 'aspect-ratio'.
+          </p>
+          <div class="card">
+            <a href="/eventmanagement.html"><div class="image" id="img3"></div></a>
+           <div class="txt text-center"><p>Business Events</p></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+    <!-- Events End -->
+
+    <!-- Book Us Start -->
+        <div class="container-fluid contact py-6 wow bounceInUp" data-wow-delay="0.1s">
+            <div class="container">
+                <div class="row g-0">
+                    <div class="col-1">
+                        <img src="img/background-site.jpg" class="img-fluid h-100 w-100 rounded-start" style="object-fit: cover; opacity: 0.7;" alt="">
+                    </div>
+                    <div class="col-10">
+                        <div class="border-bottom border-top border-primary bg-light py-5 px-4">
+                            <div class="text-center">
+                                <small class="d-inline-block fw-bold text-dark text-uppercase bg-light border border-primary rounded-pill px-4 py-1 mb-3">Book Us</small>
+                                <h1 class="display-5 mb-5">Customised Event Booking</h1>
+                            </div>
+                            <div class="row g-4 form">
+                                <div class="col-12 text-center">
+                                    <a href="/customisedevent.html"><button type="submit" class="btns btn-primary px-5 py-3 rounded-pill">BOOK NOW</button></a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-1">
+                        <img src="img/background-site.jpg" class="img-fluid h-100 w-100 rounded-end" style="object-fit: cover; opacity: 0.7;" alt="">
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Book Us End -->
+
+    <!-- Footer Start -->
+    <div
+      class="container-fluid footer py-4 mb-0 bg-light wow bounceInUp"
+      data-wow-delay="0.1s"
+    >
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-3 col-md-6">
+            <div class="footer-item">
+              <img
+                src="/img/178 x 61_a.png"
+                alt="logo"
+                width="90"
+              />
+              <p class="lh-lg mb-4">
+                Vibrato Events brings you exceptional culinary experiences
+                for every occasion.
+              </p>
+              <div class="footer-icon d-flex">
+                <a
+                  class="btn btn-primary btn-sm-square me-2 rounded-circle"
+                  href="https://www.facebook.com/p/Vibrato-Events-100075687623543/"
+                  ><i class="fab fa-facebook-f"></i
+                ></a>
+                <a
+                  class="btn btn-primary btn-sm-square me-2 rounded-circle"
+                  href=""
+                  ><i class="fab fa-twitter"></i
+                ></a>
+                <a
+                  href="https://www.instagram.com/Vibrato_Events_/"
+                  class="btn btn-primary btn-sm-square me-2 rounded-circle"
+                  ><i class="fab fa-instagram"></i
+                ></a>
+                <a href="#" class="btn btn-primary btn-sm-square rounded-circle"
+                  ><i class="fab fa-linkedin-in"></i
+                ></a>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-3 col-md-6">
+            <div class="footer-item">
+              <h4 class="mb-4">Our Services</h4>
+              <div class="d-flex flex-column align-items-start">
+                <a class="text-body mb-3" href="#events"
+                  ><i class="fa fa-arrow-right text-primary me-2"></i>Wedding
+                  Catering</a
+                >
+                <a class="text-body mb-3" href="#events"
+                  ><i class="fa fa-arrow-right text-primary me-2"></i>Stage
+                  Decoration</a
+                >
+                <a class="text-body mb-3" href="#events"
+                  ><i class="fa fa-arrow-right text-primary me-2"></i>Event
+                  Management</a
+                >
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-3 col-md-6">
+            <div class="footer-item">
+              <h4 class="mb-4">Contact Us</h4>
+              <div class="d-flex flex-column align-items-start">
+                <p>
+                  <i class="fa fa-map-marker-alt text-primary me-2"></i>1st floor, Puthussery Galleria, Engineering college P.O, Viyyur, Pandikkavu, Cheroor, Thrissur, Kerala 680009
+                </p>
+                <a href="tel:+919947447000">
+                  <p>
+                    <i class="fa fa-phone-alt text-primary me-2"></i> +91 9387
+                    07 07 07
+                  </p>
+                </a>
+                <a href="tel:+919061386000"
+                  ><p class="ms-4">+91 906 138 6000</p></a
+                >
+                <p>
+                  <i class="fas fa-envelope text-primary me-2"></i>
+                  info@vibratoevents.in
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- Footer End -->
+
+    <!-- Copyright Start -->
+    <div class="container-fluid copyright bg-light py-4">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-6 text-center text-md-start mb-3 mb-md-0">
+            <span class="text-dark"
+              ><a href="#">© VibratoEvents</a>, All right reserved.</span
+            >
+          </div>
+          <div class="col-md-6 my-auto text-center text-md-end text-dark">
+            Designed By
+            <a class="border-bottom" href="https://theaitsolutions.net"
+              >Thea IT Solutions</a
+            >
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- Copyright End -->
+
+    <!-- Back to Top -->
+    <a href="#" class="btn btn-md-square btn-primary rounded-circle back-to-top"
+      ><i class="fa fa-arrow-up"></i
+    ></a>
+
+    <!-- JavaScript Libraries -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="lib/wow/wow.min.js"></script>
+    <script src="lib/easing/easing.min.js"></script>
+    <script src="lib/waypoints/waypoints.min.js"></script>
+    <script src="lib/counterup/counterup.min.js"></script>
+    <script src="lib/lightbox/js/lightbox.min.js"></script>
+    <script src="lib/owlcarousel/owl.carousel.min.js"></script>
+
+    <!-- Template Javascript -->
+    <script src="js/main.js"></script>
+  </body>
+</html>

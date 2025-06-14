@@ -1,0 +1,775 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>Vibrato Events</title>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <meta content="" name="keywords" />
+    <meta content="" name="description" />
+
+    <!-- Google Web Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600&family=Playball&display=swap"
+      rel="stylesheet"
+    />
+   <!-- 
+    - favicon
+  -->
+  <link rel="shortcut icon" href="/img/32 x 23.png" type="image/svg+xml">
+    <!-- Icon Font Stylesheet -->
+    <link
+      rel="stylesheet"
+      href="https://use.fontawesome.com/releases/v5.15.4/css/all.css"
+    />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css"
+      rel="stylesheet"
+    />
+
+    <!-- Libraries Stylesheet -->
+    <link href="lib/animate/animate.min.css" rel="stylesheet" />
+    <link href="lib/lightbox/css/lightbox.min.css" rel="stylesheet" />
+    <link href="lib/owlcarousel/owl.carousel.min.css" rel="stylesheet" />
+
+    <!-- Customized Bootstrap Stylesheet -->
+    <link href="css/bootstrap.min.css" rel="stylesheet" />
+
+    <!-- Template Stylesheet -->
+    <link href="css/style.css" rel="stylesheet" />
+  </head>
+<style>
+  .nav-linkk {
+    transition: all 0.3s ease;
+  }
+
+  .nav-linkk:hover {
+    background-color: #0d6efd;
+    color: rgb(0, 0, 0) !important;
+    border-color: #ffa600;
+  }
+
+  .nav-linkk.active {
+    background-color: #000000 !important;
+    color: white !important;
+    border-color: #c58300 !important;
+  }
+  h5{
+    color: grey;
+  }
+    .menu-section {
+    background: #fff8f3;
+  }
+  .img{
+    margin-top: 50px;
+    width: 300px;
+  }
+  .img-modal {
+  display: none;
+  position: fixed;
+  z-index: 1050;
+  padding-top: 60px;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgba(0, 0, 0, 0.85);
+}
+
+.img-modal .modal-content {
+  margin: auto;
+  display: block;
+  max-width: 500px;
+  max-height: 80vh;
+  border-radius: 10px;
+}
+
+.img-modal .close {
+  position: absolute;
+  top: 20px;
+  right: 35px;
+  color: #fff;
+  font-size: 40px;
+  font-weight: bold;
+  cursor: pointer;
+}
+</style>
+
+  <body>
+    <!-- Spinner Start -->
+    <div
+      id="spinner"
+      class="show w-100 v  bg-white position-fixed translate-middle top-50 start-50 d-flex align-items-center justify-content-center"
+    >
+      <div class="spinner-grow text-primary" role="status"></div>
+    </div>
+    <!-- Spinner End -->
+
+    <!-- Navbar start -->
+    <div class="container-fluid nav-bar">
+      <div class="container">
+        <nav class="navbar navbar-light navbar-expand-lg py-4">
+          <a href="index.html" class="navbar-brand">
+            <img
+              src="/img/178 x 61_a.png"
+              alt="logo"
+              width="90"
+            />
+          </a>
+          <button
+            class="navbar-toggler py-2 px-3"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#navbarCollapse"
+          >
+            <span class="fa fa-bars text-primary"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarCollapse">
+            <div class="navbar-nav mx-auto">
+              <a href="index.html" class="nav-item nav-link active">Home</a>
+              <a href="/about.html" class="nav-item nav-link">About</a>
+              <a href="service.html" class="nav-item nav-link">Services</a>
+              <a href="event.html" class="nav-item nav-link">Events</a>
+              <a href="menu.html" class="nav-item nav-link">Menu</a>
+              <a href="/contact.html" class="nav-item nav-link">Contact</a>
+            </div>
+             <a
+              href="https://api.whatsapp.com/send?phone=919947447000&text=Enquiry"
+              class="btns btn-primary py-2 px-4 d-none d-xl-inline-block rounded-pill"
+              >Book Now</a
+            >
+          </div>
+        </nav>
+      </div>
+    </div>
+    <!-- Navbar End -->
+
+    <!-- Hero Start -->
+    <div class="container-fluid bg-light py-4 mt-0">
+      <div class="container text-center animated bounceInDown">
+        <h1 class="display-1 mb-4">Event Booking</h1>
+        <ol
+          class="breadcrumb justify-content-center mb-0 animated bounceInDown"
+        >
+          <li class="breadcrumb-item"><a href="/index.html">Home</a></li>
+          <li class="breadcrumb-item"><a href="#">Pages</a></li>
+          <li class="breadcrumb-item text-dark" aria-current="page">Event booking</li>
+        </ol>
+      </div>
+    </div>
+    <!-- Hero End -->
+
+    <!-- Menu Start -->
+    <div class="container-fluid menu bg-light py-4">
+      <div class="container">
+        <div class="text-center wow bounceInUp" data-wow-delay="0.1s">
+          <small
+            class="d-inline-block fw-bold text-dark text-uppercase bg-light border border-primary rounded-pill px-4 py-1 mb-3"
+            >Book us</small
+          >
+          <h1 class="display-5 mb-5">Customised Event Booking</h1>
+        </div>
+        <div class="container my-4">
+  <h5>Selected Items:</h5>
+  <ul id="selectedItems" class="list-unstyled"></ul>
+  <button class="btn btn-success mt-2" onclick="sendViaWhatsApp()">Send via WhatsApp</button>
+</div>
+       <div class="tab-class text-center">
+  <ul
+    class="nav nav-pills d-flex flex-wrap justify-content-center gap-3 mb-5 wow bounceInUp"
+    data-wow-delay="0.1s"
+    role="tablist"
+  >
+    <li class="nav-item" role="presentation">
+      <button
+        class="nav-linkk active px-4 py-2 border border-primary bg-white text-primary fw-semibold rounded-pill shadow-sm"
+        id="welcome-tab"
+        data-bs-toggle="pill"
+        data-bs-target="#tab-6"
+        type="button"
+        role="tab"
+        aria-controls="tab-6"
+        aria-selected="true"
+      >
+        Stage decoration
+      </button>
+    </li>
+    <li class="nav-item" role="presentation">
+      <button
+        class="nav-linkk px-4 py-2 border border-primary bg-white text-primary fw-semibold rounded-pill shadow-sm"
+        id="maincourse-tab"
+        data-bs-toggle="pill"
+        data-bs-target="#tab-7"
+        type="button"
+        role="tab"
+        aria-controls="tab-7"
+        aria-selected="false"
+      >
+        Car decoration
+      </button>
+    </li>
+    <li class="nav-item" role="presentation">
+      <button
+        class="nav-linkk px-4 py-2 border border-primary bg-white text-primary fw-semibold rounded-pill shadow-sm"
+        id="veg-tab"
+        data-bs-toggle="pill"
+        data-bs-target="#tab-8"
+        type="button"
+        role="tab"
+        aria-controls="tab-8"
+        aria-selected="false"
+      >
+        Catering
+      </button>
+    </li>
+    <li class="nav-item" role="presentation">
+      <button
+        class="nav-linkk px-4 py-2 border border-primary bg-white text-primary fw-semibold rounded-pill shadow-sm"
+        id="food-tab"
+        data-bs-toggle="pill"
+        data-bs-target="#tab-9"
+        type="button"
+        role="tab"
+        aria-controls="tab-9"
+        aria-selected="false"
+      >
+        Food menu
+      </button>
+    </li>
+    <li class="nav-item" role="presentation">
+      <button
+        class="nav-linkk px-4 py-2 border border-primary bg-white text-primary fw-semibold rounded-pill shadow-sm"
+        id="nonveg-tab"
+        data-bs-toggle="pill"
+        data-bs-target="#tab-10"
+        type="button"
+        role="tab"
+        aria-controls="tab-10"
+        aria-selected="false"
+      >
+        Event
+      </button>
+    </li>
+  </ul>
+</div>
+
+         <div class="tab-content">
+              <div class="tab-pane fade show active" id="tab-6" role="tabpanel" aria-labelledby="welcome-tab">
+                <div class="row g-4">
+                 <!-- Gallery Item 1 -->
+      <div class="col-12 col-sm-6 col-md-4 col-lg-3">
+        <div class="card">
+          <img src="/img/Stage decoration/stage1.jpeg" class="card-img-top" alt="Event 1">
+          <div class="card-body text-center">
+           <input type="checkbox" id="stage1" onclick="toggleSelection('stage1', 'Stage decoration - stage1')" />
+  <label for="stage1" class="btn btn-outline-primary">Select</label>
+          </div>
+        </div>
+      </div>
+
+      <!-- Gallery Item 2 -->
+      <div class="col-12 col-sm-6 col-md-4 col-lg-3">
+        <div class="card">
+          <img src="/img/Stage decoration/stage2.jpeg" class="card-img-top" alt="Event 2">
+          <div class="card-body text-center">
+            <input type="checkbox" id="stage2" onclick="toggleSelection('stage2', 'Stage decoration - stage2')" />
+  <label for="stage2" class="btn btn-outline-primary">Select</label>
+          </div>
+        </div>
+      </div>
+
+      <!-- Gallery Item 3 -->
+      <div class="col-12 col-sm-6 col-md-4 col-lg-3">
+        <div class="card">
+          <img src="/img/Stage decoration/stage11.jpeg" class="card-img-top" alt="Event 3">
+          <div class="card-body text-center">
+             <input type="checkbox" id="stage11" onclick="toggleSelection('stage11', 'Stage decoration - stage-11')" />
+  <label for="stage11" class="btn btn-outline-primary">Select</label>
+          </div>
+        </div>
+      </div>
+
+      <!-- Gallery Item 4 -->
+      <div class="col-12 col-sm-6 col-md-4 col-lg-3">
+        <div class="card">
+          <img src="/img/Stage decoration/stage4.jpeg" class="card-img-fluid" alt="Event 4">
+          <div class="card-body text-center">
+             <input type="checkbox" id="stage4" onclick="toggleSelection('stage4', 'Stage decoration - stage-4')" />
+  <label for="stage4" class="btn btn-outline-primary">Select</label>
+          </div>
+        </div>
+      </div>
+
+       <!-- Gallery Item 5-->
+      <div class="col-12 col-sm-6 col-md-4 col-lg-3">
+        <div class="card">
+          <img src="/img/Stage decoration/stage5.jpeg" class="card-img-fluid" alt="Event 5">
+          <div class="card-body text-center">
+            <input type="checkbox" id="stage5" onclick="toggleSelection('stage5', 'Stage decoration - stage-5')" />
+  <label for="stage5" class="btn btn-outline-primary">Select</label>
+          </div>
+        </div>
+      </div>
+       <!-- Gallery Item 6 -->
+      <div class="col-12 col-sm-6 col-md-4 col-lg-3">
+        <div class="card  ">
+          <img src="/img/Stage decoration/stage6.jpeg" class="card-img-fluid" alt="Event 6">
+          <div class="card-body text-center">
+             <input type="checkbox" id="stage6" onclick="toggleSelection('stage6', 'Stage decoration - stage-6')" />
+  <label for="stage6" class="btn btn-outline-primary">Select</label>
+          </div>
+        </div>
+      </div>
+      <!-- Gallery Item 7 -->
+      <div class="col-12 col-sm-6 col-md-4 col-lg-3">
+        <div class="card  ">
+          <img src="/img/Stage decoration/stage7.jpeg" class="card-img-fluid" alt="Event 7">
+          <div class="card-body text-center">
+             <input type="checkbox" id="stage7" onclick="toggleSelection('stage7', 'Stage decoration - stage-7')" />
+  <label for="stage7" class="btn btn-outline-primary">Select</label>
+          </div>
+        </div>
+      </div>
+      <!-- Gallery Item 8 -->
+      <div class="col-12 col-sm-6 col-md-4 col-lg-3">
+        <div class="card  ">
+          <img src="/img/Stage decoration/stage8.jpeg" class="card-img-fluid" alt="Event 8">
+          <div class="card-body text-center">
+             <input type="checkbox" id="stage8" onclick="toggleSelection('stage8', 'Stage decoration - stage-8')" />
+  <label for="stage8" class="btn btn-outline-primary">Select</label>
+          </div>
+        </div>
+      </div>
+      <!-- Gallery Item 9-->
+      <div class="col-12 col-sm-6 col-md-4 col-lg-3">
+        <div class="card  ">
+          <img src="/img/Stage decoration/stage9.jpeg" class="card-img-fluid" alt="Event 9">
+          <div class="card-body text-center">
+             <input type="checkbox" id="stage9" onclick="toggleSelection('stage9', 'Stage decoration - stage-9')" />
+  <label for="stage9" class="btn btn-outline-primary">Select</label>
+          </div>
+        </div>
+      </div>
+      <!-- Gallery Item 10-->
+      <div class="col-12 col-sm-6 col-md-4 col-lg-3">
+        <div class="card  ">
+          <img src="/img/Stage decoration/stage10.jpeg" class="card-img-fluid" alt="Event 10">
+          <div class="card-body text-center">
+             <input type="checkbox" id="stage10" onclick="toggleSelection('stage10', 'Stage decoration - stage-10')" />
+  <label for="stage10" class="btn btn-outline-primary">Select</label>
+          </div>
+        </div>
+      </div>
+      <!-- Gallery Item 11-->
+      <div class="col-12 col-sm-6 col-md-4 col-lg-3">
+        <div class="card  ">
+          <img src="/img/Stage decoration/stage3.jpeg" class="card-img-fluid" alt="Event 11">
+          <div class="card-body text-center">
+             <input type="checkbox" id="stage3" onclick="toggleSelection('stage3', 'Stage decoration - stage-3')" />
+  <label for="stage3" class="btn btn-outline-primary">Select</label>
+          </div>
+        </div>
+      </div>
+                </div>
+              </div>
+    
+              <div class="tab-pane fade" id="tab-7" role="tabpanel" aria-labelledby="maincourse-tab">
+  <div class="row g-4">
+    <!-- Gallery Item 4 -->
+      <div class="col-12 col-sm-6 col-md-4 col-lg-3">
+        <div class="card  ">
+          <img src="/img/events/event4.jpg" class="card-img-fluid" alt="Event 4">
+          <div class="card-body text-center">
+             <input type="checkbox" id="car1" onclick="toggleSelection('car1', 'Car decoration - car-1')" />
+  <label for="car1" class="btn btn-outline-primary">Select</label>
+          </div>
+        </div>
+      </div>
+      <!-- Gallery Item 4 -->
+      <div class="col-12 col-sm-6 col-md-4 col-lg-3">
+        <div class="card  ">
+          <img src="https://www.flowernpetals.com/wp-content/uploads/2025/04/1739967370755.webp" class="card-img-fluid" alt="Event 4">
+          <div class="card-body text-center">
+             <input type="checkbox" id="car2" onclick="toggleSelection('car2', 'Car decoration - car-2')" />
+  <label for="car2" class="btn btn-outline-primary">Select</label>
+          </div>
+        </div>
+      </div>
+      <!-- Gallery Item 4 -->
+      <div class="col-12 col-sm-6 col-md-4 col-lg-3">
+        <div class="card  ">
+          <img src="https://www.24hourscakedelivery.com/wp-content/uploads/2025/04/1739964831174.webp" class="card-img-fluid" alt="Event 4">
+          <div class="card-body text-center">
+             <input type="checkbox" id="car3" onclick="toggleSelection('car3', 'Car decoration - car-3')" />
+  <label for="car3" class="btn btn-outline-primary">Select</label>
+          </div>
+        </div>
+      </div>
+      <!-- Gallery Item 4 -->
+      <div class="col-12 col-sm-6 col-md-4 col-lg-3">
+        <div class="card  ">
+          <img src="https://decorationwala.com/wp-content/uploads/2024/07/Decorationwala.com-Car-20241013.webp" class="card-img-fluid" alt="Event 4">
+          <div class="card-body text-center">
+             <input type="checkbox" id="car4" onclick="toggleSelection('car4', 'Car decoration - car-4')" />
+  <label for="car4" class="btn btn-outline-primary">Select</label>
+          </div>
+        </div>
+      </div>
+  </div>
+</div>
+
+    <div class="tab-pane fade" id="tab-8" role="tabpanel" aria-labelledby="veg-tab">
+      <div class="row g-4">
+        <!-- Gallery Item 1 -->
+      <div class="col-12 col-sm-6 col-md-4 col-lg-3">
+        <div class="card  ">
+          <img src="/img/catering/catering1.jpg" class="card-img-top" alt="catering 1">
+          <div class="card-body text-center">
+           <input type="checkbox" id="catering1" onclick="toggleSelection('catering1', 'catering - catering1-')" />
+  <label for="catering1" class="btn btn-outline-primary">Select</label>
+          </div>
+        </div>
+      </div>
+
+      <!-- Gallery Item 2 -->
+      <div class="col-12 col-sm-6 col-md-4 col-lg-3">
+        <div class="card  ">
+          <img src="/img/catering/catering2.jpg" class="card-img-top" alt="Event 2">
+          <div class="card-body text-center">
+            <input type="checkbox" id="catering2" onclick="toggleSelection('catering2', 'catering - catering-2')" />
+  <label for="catering2" class="btn btn-outline-primary">Select</label>
+          </div>
+        </div>
+      </div>
+
+      <!-- Gallery Item 3 -->
+      <div class="col-12 col-sm-6 col-md-4 col-lg-3">
+        <div class="card  ">
+          <img src="/img/catering/cater3.jpg" class="card-img-top" alt="Event 3">
+          <div class="card-body text-center">
+           <input type="checkbox" id="catering3" onclick="toggleSelection('catering3', 'catering - catering-3')" />
+  <label for="catering3" class="btn btn-outline-primary">Select</label>
+          </div>
+        </div>
+      </div>
+
+      <!-- Gallery Item 4 -->
+      <div class="col-12 col-sm-6 col-md-4 col-lg-3">
+        <div class="card  ">
+          <img src="/img/catering/cater4.jpg" class="card-img-fluid" alt="Event 4">
+          <div class="card-body text-center">
+            <input type="checkbox" id="catering4" onclick="toggleSelection('catering4', 'catering - catering-4')" />
+  <label for="catering4" class="btn btn-outline-primary">Select</label>
+          </div>
+        </div>
+      </div>
+
+       <!-- Gallery Item 5-->
+      <div class="col-12 col-sm-6 col-md-4 col-lg-3">
+        <div class="card  ">
+          <img src="/img/catering/cater5.jpg" class="card-img-fluid" alt="Event 5">
+          <div class="card-body text-center">
+            <input type="checkbox" id="catering1" onclick="toggleSelection('catering1', 'catering - catering-5')" />
+  <label for="catering5" class="btn btn-outline-primary">Select</label>
+          </div>
+        </div>
+      </div>
+       <!-- Gallery Item 6 -->
+      <div class="col-12 col-sm-6 col-md-4 col-lg-3">
+        <div class="card  ">
+          <img src="/img/catering/cater6.jpg" class="card-img-fluid" alt="Event 6">
+          <div class="card-body text-center">
+              <input type="checkbox" id="catering6" onclick="toggleSelection('catering6', 'catering - catering-6')" />
+  <label for="catering6" class="btn btn-outline-primary">Select</label>
+          </div>
+        </div>
+      </div>
+      </div>
+    </div>
+     <div class="tab-pane fade" id="tab-9" role="tabpanel" aria-labelledby="food-tab">
+  <div class="row g-4">
+    <!-- food Item  -->
+      <div class="col-12 col-sm-6 col-md-4 col-lg-3">
+        <div class="card  ">
+          <img src="/img/menu/christain1.jpg" class="card-img-fluid" alt="Event 4">
+          <div class="card-body text-center">
+             <input type="checkbox" id="menu1" onclick="toggleSelection('menu1', 'Food menu - menu-1')" />
+  <label for="menu1" class="btn btn-outline-primary">Select</label>
+          </div>
+        </div>
+      </div>
+      <!-- food Item  -->
+      <div class="col-12 col-sm-6 col-md-4 col-lg-3">
+        <div class="card  ">
+          <img src="/img/menu/c2.jpg" class="card-img-fluid" alt="Event 4">
+          <div class="card-body text-center">
+             <input type="checkbox" id="menu2" onclick="toggleSelection('menu2', 'Food menu - menu-2')" />
+  <label for="menu2" class="btn btn-outline-primary">Select</label>
+          </div>
+        </div>
+      </div>
+      <!-- food Item  -->
+      <div class="col-12 col-sm-6 col-md-4 col-lg-3">
+        <div class="card  ">
+          <img src="/img/menu/c3.jpg" class="card-img-fluid" alt="Event 4">
+          <div class="card-body text-center">
+            <input type="checkbox" id="menu3" onclick="toggleSelection('menu3', 'Food menu - menu-3')" />
+  <label for="menu3" class="btn btn-outline-primary">Select</label>
+          </div>
+        </div>
+      </div>
+      <!-- food Item  -->
+      <div class="col-12 col-sm-6 col-md-4 col-lg-3">
+        <div class="card  ">
+          <img src="/img/menu/c4.jpg" class="card-img-fluid" alt="Event 4">
+          <div class="card-body text-center">
+             <input type="checkbox" id="menu4" onclick="toggleSelection('menu4', 'Food menu - menu-4')" />
+  <label for="menu4" class="btn btn-outline-primary">Select</label>
+          </div>
+        </div>
+      </div>
+  </div>
+</div>
+              <div class="tab-pane fade" id="tab-10" role="tabpanel" aria-labelledby="nonveg-tab">
+  <div class="row g-4">
+    <!-- Gallery Item 1 -->
+      <div class="col-12 col-sm-6 col-md-4 col-lg-3">
+        <div class="card  ">
+          <img src="/img/events/event1.jpg" class="card-img-top" alt="Event 1">
+          <div class="card-body text-center">
+         <input type="checkbox" id="event1" onclick="toggleSelection('event1', 'Event - event-1')" />
+  <label for="event1" class="btn btn-outline-primary">Select</label>
+          </div>
+        </div>
+      </div>
+
+      <!-- Gallery Item 2 -->
+      <div class="col-12 col-sm-6 col-md-4 col-lg-3">
+        <div class="card  ">
+          <img src="/img/events/event2.jpg" class="card-img-top" alt="Event 2">
+          <div class="card-body text-center">
+            <input type="checkbox" id="event2" onclick="toggleSelection('event2', 'Event - event-2')" />
+  <label for="event2" class="btn btn-outline-primary">Select</label>
+          </div>
+        </div>
+      </div>
+
+      <!-- Gallery Item 3 -->
+      <div class="col-12 col-sm-6 col-md-4 col-lg-3">
+        <div class="card  ">
+          <img src="/img/events/event3.jpg" class="card-img-top" alt="Event 3">
+          <div class="card-body text-center">
+           <input type="checkbox" id="event3" onclick="toggleSelection('event3', 'Event - event-3')" />
+  <label for="event3" class="btn btn-outline-primary">Select</label>
+          </div>
+        </div>
+      </div>
+
+       <!-- Gallery Item 5-->
+      <div class="col-12 col-sm-6 col-md-4 col-lg-3">
+        <div class="card  ">
+          <img src="/img/events/event5.jpg" class="card-img-fluid" alt="Event 5">
+          <div class="card-body text-center">
+            <input type="checkbox" id="event4" onclick="toggleSelection('event4', 'Event - event-4')" />
+  <label for="event4" class="btn btn-outline-primary">Select</label>
+          </div>
+        </div>
+      </div>
+       <!-- Gallery Item 6 -->
+      <div class="col-12 col-sm-6 col-md-4 col-lg-3">
+        <div class="card  ">
+          <img src="/img/events/event6.jpg" class="card-img-fluid" alt="Event 6">
+          <div class="card-body text-center">
+            <input type="checkbox" id="event5" onclick="toggleSelection('event5', 'Event - event-5')" />
+  <label for="event5" class="btn btn-outline-primary">Select</label>
+          </div>
+        </div>
+      </div>
+       <!-- Gallery Item 7 -->
+      <div class="col-12 col-sm-6 col-md-4 col-lg-3">
+        <div class="card  ">
+          <img src="/img/events/event7.webp" class="card-img-fluid" alt="Event 7">
+          <div class="card-body text-center">
+            <input type="checkbox" id="event6" onclick="toggleSelection('event6', 'Event - event-6')" />
+  <label for="event6" class="btn btn-outline-primary">Select</label>
+          </div>
+        </div>
+      </div>
+  </div>
+</div>
+         </div>
+         
+
+     <!-- Footer Start -->
+    <div
+      class="container-fluid footer py-4 mb-0 bg-light wow bounceInUp"
+      data-wow-delay="0.1s"
+    >
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-3 col-md-6">
+            <div class="footer-item">
+              <img
+                src="/img/178 x 61_a.png"
+                alt="logo"
+                width="90"
+              />
+              <p class="lh-lg mb-4">
+                Vibrato Events brings you exceptional culinary experiences
+                for every occasion.
+              </p>
+              <div class="footer-icon d-flex">
+                <a
+                  class="btn btn-primary btn-sm-square me-2 rounded-circle"
+                  href="https://www.facebook.com/p/Vibrato-Events-100075687623543/"
+                  ><i class="fab fa-facebook-f"></i
+                ></a>
+                <a
+                  class="btn btn-primary btn-sm-square me-2 rounded-circle"
+                  href=""
+                  ><i class="fab fa-twitter"></i
+                ></a>
+                <a
+                  href="https://www.instagram.com/Vibrato_Events_/"
+                  class="btn btn-primary btn-sm-square me-2 rounded-circle"
+                  ><i class="fab fa-instagram"></i
+                ></a>
+                <a href="#" class="btn btn-primary btn-sm-square rounded-circle"
+                  ><i class="fab fa-linkedin-in"></i
+                ></a>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-3 col-md-6">
+            <div class="footer-item">
+              <h4 class="mb-4">Our Services</h4>
+              <div class="d-flex flex-column align-items-start">
+                <a class="text-body mb-3" href="/catering.html"
+                  ><i class="fa fa-arrow-right text-primary me-2"></i>Wedding
+                  Catering</a
+                >
+                <a class="text-body mb-3" href="/stagedecoration.html"
+                  ><i class="fa fa-arrow-right text-primary me-2"></i
+                  >Stage Decoration</a
+                >
+                <a class="text-body mb-3" href="/eventmanagement.html"
+                  ><i class="fa fa-arrow-right text-primary me-2"></i>Event Management</a
+                >
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-3 col-md-6">
+            <div class="footer-item">
+              <h4 class="mb-4">Contact Us</h4>
+              <div class="d-flex flex-column align-items-start">
+                <p>
+                  <i class="fa fa-map-marker-alt text-primary me-2"></i>1st floor, Puthussery Galleria, Engineering college P.O, Viyyur, Pandikkavu, Cheroor, Thrissur, Kerala 680009
+                </p>
+                <a href="tel:+919947447000">
+                  <p>
+                    <i class="fa fa-phone-alt text-primary me-2"></i> +91 994 744 7000
+                  </p>
+                </a>
+               <a href="tel:+919061386000"><p class="ms-4">+91 906 138 6000</p></a>
+                <p>
+                  <i class="fas fa-envelope text-primary me-2"></i>
+                  info@vibratoevents.in
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- Footer End -->
+
+    <!-- Copyright Start -->
+    <div class="container-fluid copyright bg-light py-4">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-6 text-center text-md-start mb-3 mb-md-0">
+            <span class="text-dark"
+              ><a href="#">© VibratoEvents</a>, All right reserved.</span
+            >
+          </div>
+          <div class="col-md-6 my-auto text-center text-md-end text-dark">
+            Designed By
+            <a class="border-bottom" href="https://theaitsolutions.net"
+              >Thea IT Solutions</a
+            >
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- Copyright End -->
+
+    <!-- Back to Top -->
+    <a href="#" class="btn btn-md-square btn-primary rounded-circle back-to-top"
+      ><i class="fa fa-arrow-up"></i
+    ></a>
+
+    <!-- JavaScript Libraries -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="lib/wow/wow.min.js"></script>
+    <script src="lib/easing/easing.min.js"></script>
+    <script src="lib/waypoints/waypoints.min.js"></script>
+    <script src="lib/counterup/counterup.min.js"></script>
+    <script src="lib/lightbox/js/lightbox.min.js"></script>
+    <script src="lib/owlcarousel/owl.carousel.min.js"></script>
+    <!-- Template Javascript -->
+    <script src="js/main.js"></script>
+    <script>
+          const selectedItems = new Set();
+
+function toggleSelection(id, name) {
+  const checkbox = event.target;
+  const currentTab = checkbox.closest('.tab-pane');
+  const checkboxes = currentTab.querySelectorAll('input[type="checkbox"]');
+
+  // Uncheck all checkboxes in this tab and remove them from selectedItems
+  checkboxes.forEach(cb => {
+    if (cb !== checkbox) {
+      cb.checked = false;
+      selectedItems.delete(cb.id);
+    }
+  });
+
+  // Toggle the clicked checkbox
+  if (checkbox.checked) {
+    selectedItems.add(id);
+  } else {
+    selectedItems.delete(id);
+  }
+
+  updateSelectedList();
+}
+
+
+  function updateSelectedList() {
+    const selectedList = document.getElementById("selectedItems");
+    selectedList.innerHTML = "";
+
+    selectedItems.forEach(id => {
+      const li = document.createElement("li");
+      li.textContent = id;
+      selectedList.appendChild(li);
+    });
+  }
+
+  function sendViaWhatsApp() {
+    if (selectedItems.size === 0) {
+      alert("Please select at least one item.");
+      return;
+    }
+
+    const message = "Selected Event Items:\n" + Array.from(selectedItems).join("\n");
+    const phoneNumber = "919061386000"; 
+    const whatsappURL = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(message)}`;
+    window.open(whatsappURL, "_blank");
+  }
+    </script>
+  </body>
+</html>
